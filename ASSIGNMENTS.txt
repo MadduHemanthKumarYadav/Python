@@ -1,0 +1,66 @@
+Assignment - 1
+Create two sets and perform set operations on them.
+
+set1 = {1,2,3,4}
+set2 = {3,4,5,6}
+#adding elements to the set
+set1.add(7)
+set2.add(9)
+print(set1)
+print(set2)
+
+set1 = {1,2,3,4}
+set2 = {3,4,5,6}
+#Union Operation
+set3 = set1.union(set2)
+print(set3)
+
+set1 = {1,2,3,4}
+set2 = {3,4,5,6}
+#Intersection Operation
+set4 = set1.intersection(set2)
+print(set4)
+
+set1 = {1,2,3,4}
+set2 = {3,4,5,6}
+#Difference Operation
+set5 = set1.difference(set2)
+print(set5)
+
+set1 = {1,2,3,4}
+set2 = {3,4,5,6}
+#Checking whether set2 is subset of set1
+set2.issubset(set1)
+
+set1 = {1,2,3,4}
+set2 = {3,4,5,6}
+#Checking whether set2 is superset of set1
+set2.issuperset(set1)
+
+set1 = {1,2,3,4}
+set2 = {3,4,5,6}
+#Checking whether set1 and set2 are dijoint sets
+set1.isdisjoint(set2)
+
+
+
+Assignment - 2
+Create a function which takes two user inputs as operands and the operation symbol to be performed on them as the user input as well and perform the calculation.
+
+def calc():
+  n1 = int(input("Enter the first operand: "))
+  n2 = int(input("Enter the second operand: "))
+  o = input("Enter the operator: " )
+  if(o == '+'):
+         print("The sum is ",(n1+n2))
+  elif(o == '-'):
+         print("The difference is ",(n1-n2))
+  elif(o == '*'):
+         print("The product is ",(n1*n2))
+  elif(o == '/'):
+         print("The quotient is ",(n1/n2))
+  elif(o == '%'):
+         print("The remainder is ",(n1%n2))
+  else:
+         print("Invalid Operator")
+calc()
