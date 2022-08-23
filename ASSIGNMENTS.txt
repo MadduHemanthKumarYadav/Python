@@ -1,6 +1,7 @@
 Assignment - 1
 Create two sets and perform set operations on them.
 
+#CODE
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
 #adding elements to the set
@@ -9,17 +10,37 @@ set2.add(9)
 print(set1)
 print(set2)
 
+#OUTPUT
+
+{1, 2, 3, 4, 7}
+{3, 4, 5, 6, 9}
+
+
+#CODE
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
 #Union Operation
 set3 = set1.union(set2)
 print(set3)
 
+#OUTPUT
+
+{1, 2, 3, 4, 5, 6}
+
+
+#CODE
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
 #Intersection Operation
 set4 = set1.intersection(set2)
 print(set4)
+
+#OUTPUT
+
+{3, 4}
+
+
+#CODE
 
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
@@ -27,25 +48,50 @@ set2 = {3,4,5,6}
 set5 = set1.difference(set2)
 print(set5)
 
+#OUTPUT
+
+{1, 2}
+
+
+#CODE
+
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
 #Checking whether set2 is subset of set1
 set2.issubset(set1)
+
+#OUTPUT
+
+False
+
+
+#CODE
 
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
 #Checking whether set2 is superset of set1
 set2.issuperset(set1)
 
+#OUTPUT
+
+False
+
+
+#CODE
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
 #Checking whether set1 and set2 are dijoint sets
 set1.isdisjoint(set2)
 
+#OUTPUT
+
+False
 
 
 Assignment - 2
 Create a function which takes two user inputs as operands and the operation symbol to be performed on them as the user input as well and perform the calculation.
+
+#CODE
 
 def calc():
   n1 = int(input("Enter the first operand: "))
@@ -64,3 +110,107 @@ def calc():
   else:
          print("Invalid Operator")
 calc()
+
+#OUTPUT
+
+Enter the first operand: 6
+Enter the second operand: 7
+Enter the operator: *
+The product is  42
+
+
+
+Assignment - 3
+What are the modes r+, w+, a+ and give examples for each.
+
+r+ mode:
+In r+ mode, we can read and write the file, but the file pointer position is at the beginning of the file, if we write the file directly, it will overwrite the beginning content of the file.
+
+#CODE
+
+f = open("myfile.txt","r")
+print(f.read())
+f.close()
+
+#OUTPUT
+
+Hello all, 
+This is my file. 
+
+#CODE
+
+f = open("myfile.txt","r+")
+f.write("new line\n")
+print(f.read())
+f.close()
+
+#OUTPUT
+
+, 
+This is my file.
+
+w+ mode:
+It Opens a file for both writing and reading. It Overwrites the existing file if the file exists. If the file does not exist, it creates a new file for reading and writing.
+
+#CODE
+
+f = open("myfile.txt",'w')
+f.write("Hi all \n This is a new file.")
+f.close()
+f = open("myfile.txt",'r')
+print(f.read())
+f.close()
+
+#OUTPUT
+
+Hi all 
+ This is a new file.
+
+
+#CODE
+
+f = open("myfile1.txt",'w+')
+f.write("Hi all \n This is a new file.")
+f.close()
+f = open("myfile1.txt","r")
+print(f.read())
+f.close()
+
+#OUTPUT
+
+Hi all 
+ This is a new file.
+
+
+
+a+ mode:
+It Opens a file for both appending and reading. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+
+#CODE
+
+f = open("myfile.txt","a")
+f.write("\nThis is a new line")
+f.close()
+f = open("myfile.txt",'r')
+print(f.read())
+f.close()
+
+#OUTPUT
+
+Hi all 
+ This is a new file.
+This is a new line
+
+
+#CODE
+
+f = open("myfile3.txt",'a+')
+f.write("This is a new file")
+f.close()
+f = open("myfile3.txt",'r')
+print(f.read())
+f.close()
+
+#OUTPUT
+
+This is a new file
